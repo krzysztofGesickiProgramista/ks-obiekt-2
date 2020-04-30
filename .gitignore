@@ -1,0 +1,8 @@
+*.txt
+*.cbp
+*.layout
+ks-obiekt-2.cscope_file_list
+ks-obiekt-2.depend
+bin/
+obj/
+
