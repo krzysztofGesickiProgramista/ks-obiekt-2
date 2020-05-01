@@ -17,7 +17,7 @@ void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika() {
 }
 
 int KsiazkaAdresowa::pobierzIdZalogowanegoUzytkownika() {
-    uzytkownikManager.pobierzIdZalogowanegoUzytkownika();
+    return uzytkownikManager.pobierzIdZalogowanegoUzytkownika();
 }
 
 void KsiazkaAdresowa::wylogowanieUzytkownika() {
