@@ -95,3 +95,55 @@ Uzytkownik PlikZUzytkownikami::pobierzDaneUzytkownika(string daneJednegoUzytkown
     return uzytkownik;
 }
 
+void PlikZUzytkownikami::zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik> &uzytkownicy) {
+    fstream plikTekstowy;
+    string liniaZDanymiUzytkownika = "";
+
+    plikTekstowy.open(nazwaPlikuZUzytkownikami.c_str(), ios::out);
+    int zakres = uzytkownicy.size();
+    if (plikTekstowy.good() == true) {
+        for (int i=0; i < zakres; i++) {
+            liniaZDanymiUzytkownika = zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(uzytkownicy[i]);
+            if (i == zakres-1) {
+                plikTekstowy << liniaZDanymiUzytkownika;
+            }
+            else {
+                plikTekstowy << liniaZDanymiUzytkownika << endl;
+            }
+            liniaZDanymiUzytkownika = "";
+        }
+    }
+    else
+    {
+        cout << "Nie mozna otworzyc pliku " << nazwaPlikuZUzytkownikami << endl;
+    }
+    plikTekstowy.close();
+}
+
+
+//    vector <Uzytkownik>::iterator itrKoniec = --uzytkownicy.end();
+
+//    plikTekstowy.open(nazwaPlikuZUzytkownikami.c_str(), ios::out);
+//
+//    if (plikTekstowy.good() == true)
+//    {
+//        for (vector <Uzytkownik>::iterator itr = uzytkownicy.begin(); itr != uzytkownicy.end(); itr++)
+//        {
+//            liniaZDanymiUzytkownika = zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(*itr);
+//
+//            if (itr == itrKoniec)
+//            {
+//               plikTekstowy << liniaZDanymiUzytkownika;
+//            }
+//            else
+//            {
+//                plikTekstowy << liniaZDanymiUzytkownika << endl;
+//            }
+//            liniaZDanymiUzytkownika = "";
+//        }
+//    }
+//    else
+//    {
+//        cout << "Nie mozna otworzyc pliku " << nazwaPlikuZUzytkownikami << endl;
+//    }
+//    plikTekstowy.close();
