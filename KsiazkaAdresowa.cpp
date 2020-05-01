@@ -8,10 +8,15 @@ void KsiazkaAdresowa::wypiszWszystkichUzytkownikow() {
     uzytkownikManager.wypiszWszystkichUzytkownikow();
 }
 
-int KsiazkaAdresowa::logowanieUzytkownika() {
-    return uzytkownikManager.logowanieUzytkownika();
+void KsiazkaAdresowa::logowanieUzytkownika() {
+    uzytkownikManager.logowanieUzytkownika();
 }
 
-void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika) {
-    uzytkownikManager.zmianaHaslaZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
+void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika() {
+    uzytkownikManager.zmianaHaslaZalogowanegoUzytkownika();
 }
+
+int KsiazkaAdresowa::pobierzIdZalogowanegoUzytkownika() {
+    uzytkownikManager.pobierzIdZalogowanegoUzytkownika();
+}
+
