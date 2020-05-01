@@ -110,10 +110,6 @@ int UzytkownikManager::pobierzIdZalogowanegoUzytkownika() {
     return idZalogowanegoUzytkownika;
 }
 
-void UzytkownikManager::ustawIdZalogowanegoUzytkownika(int noweIdZalogowanegoUzytkownika) {
-    idZalogowanegoUzytkownika = noweIdZalogowanegoUzytkownika;
-}
-
 void UzytkownikManager::wylogowanieUzytkownika() {
     idZalogowanegoUzytkownika = 0;
 }
