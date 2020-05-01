@@ -1,38 +1,136 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>10</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>350</x>
-      <y>150</y>
-      <w>310</w>
-      <h>190</h>
+      <x>568</x>
+      <y>128</y>
+      <w>232</w>
+      <h>136</h>
     </coordinates>
     <panel_attributes>KsiazkaAdresowa
 -
-idZalogowanegoUzytkownika : int
 idOstatniegoAdresata : int
 idUsunietegoAdresata : int
 -
-rejestracjaUzytkownika() : void
-logowanieUzytkownika() : int
+KsiazkaAdresowa()
+
+
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>350</x>
-      <y>360</y>
-      <w>310</w>
-      <h>200</h>
+      <x>608</x>
+      <y>800</y>
+      <w>248</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>AdresatManager
+-
+id : int
+idUzytkownika : int
+imie : string
+nazwisko : string
+numerTelefonu : string
+email : string
+adres : string
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>232</x>
+      <y>272</y>
+      <w>392</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes>UzytkownikManager
+-
+idZalogowanegoUzytkownika : int
+uzytkownicy : vector &lt;Uzytkownik&gt;
+-
+rejestracjaUzytkownika() : void
+logowanieUzytkownika() : int
+wypiszWszystkichUzytkownikow() : void
+podajDaneNowegoUzytkownika() : Uzytkownik
+pobierzIdNowegoUzytkownika() : int
+czyIstniejeLogin() : bool
+zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami() : string
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>944</x>
+      <y>288</y>
+      <w>248</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>MetodyPomocnicze
+-
+-
+konwerjsaIntNaString() : string
+wczytajLinie() : string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>608</x>
+      <y>960</y>
+      <w>248</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>Adresat
+-
+id : int
+idUzytkownika : int
+imie : string
+nazwisko : string
+numerTelefonu : string
+email : string
+adres : string
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>256</x>
+      <y>504</y>
+      <w>248</w>
+      <h>160</h>
     </coordinates>
     <panel_attributes>Uzytkownik
 -
 id : int
 login : string
 haslo : string
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>656</x>
+      <y>288</y>
+      <w>248</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>PlikZUzytkownikami
+-
+nazwaPlikuZUzytkownikami : string
+-
+dopiszUzytkownikaDoPliku() : void
+czyPlikJestPusty() : bool
 </panel_attributes>
     <additional_attributes/>
   </element>
