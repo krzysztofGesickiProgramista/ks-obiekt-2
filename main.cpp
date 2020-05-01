@@ -6,27 +6,13 @@ using namespace std;
 
 int main()
 {
-    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt");
+    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
 
     ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
 
-    cout << "aktualne ID zalogowanego uzytkownika: " << ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika();
-    cout << endl;
     ksiazkaAdresowa.logowanieUzytkownika();
 
-    cout << "aktualne DRUGIE ID zalogowanego uzytkownika: " << ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika();
-    cout << endl;
-
-    cout << "teraz wylogowanie";
-    cout << endl;
-    ksiazkaAdresowa.wylogowanieUzytkownika();
-
-    cout << "aktualne ID zalogowanego uzytkownika: " << ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika();
-    cout << endl;
-
-
-
-    ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
+    ksiazkaAdresowa.dodajAdresata();
 
     return 0;
 }
