@@ -17,7 +17,14 @@ int main()
     cout << "aktualne DRUGIE ID zalogowanego uzytkownika: " << ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika();
     cout << endl;
 
-    ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
+    cout << "teraz wylogowanie";
+    cout << endl;
+    ksiazkaAdresowa.wylogowanieUzytkownika();
+
+    cout << "aktualne ID zalogowanego uzytkownika: " << ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika();
+    cout << endl;
+
+
 
     ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
 
