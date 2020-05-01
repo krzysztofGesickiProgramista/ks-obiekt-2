@@ -7,9 +7,8 @@ using namespace std;
 int main()
 {
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt");
-    ksiazkaAdresowa.rejestracjaUzytkownika();
-    ksiazkaAdresowa.rejestracjaUzytkownika();
     ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
+    cout << endl << "ID zalogowanego uzytkownika: " << ksiazkaAdresowa.logowanieUzytkownika();
 
     return 0;
 }

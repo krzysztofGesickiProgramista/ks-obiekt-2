@@ -8,6 +8,8 @@ void KsiazkaAdresowa::wypiszWszystkichUzytkownikow() {
     uzytkownikManager.wypiszWszystkichUzytkownikow();
 }
 
-
+int KsiazkaAdresowa::logowanieUzytkownika() {
+    return uzytkownikManager.logowanieUzytkownika();
+}
 
 
