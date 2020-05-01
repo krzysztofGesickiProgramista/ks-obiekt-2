@@ -58,7 +58,7 @@ void UzytkownikManager::wczytajUzytkownikowZPliku() {
     uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
 }
 
-int UzytkownikManager::logowanieUzytkownika() {
+void UzytkownikManager::logowanieUzytkownika() {
     Uzytkownik uzytkownik;
     string login = "", haslo = "";
 
@@ -74,17 +74,24 @@ int UzytkownikManager::logowanieUzytkownika() {
                 if (uzytkownicy[i].pobierzHaslo() == haslo) {
                     cout << endl << "Zalogowales sie." << endl << endl;
                     system("pause");
-                    return uzytkownicy[i].pobierzId();
+                    idZalogowanegoUzytkownika = uzytkownicy[i].pobierzId();
+                    return;
                 }
             }
         }
     }
     cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
     system("pause");
-    return 0;
+    idZalogowanegoUzytkownika = 0;
+    return;
 }
 
-void UzytkownikManager::zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika) {
+void UzytkownikManager::zmianaHaslaZalogowanegoUzytkownika() {
+    if (idZalogowanegoUzytkownika == 0) {
+        cout << "Najpierw sie zaloguj";
+        return;
+    }
+
     string noweHaslo = "";
     cout << "Podaj nowe haslo: ";
     noweHaslo = MetodyPomocnicze::wczytajLinie();
@@ -97,4 +104,12 @@ void UzytkownikManager::zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzy
         }
     }
     plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
+}
+
+int UzytkownikManager::pobierzIdZalogowanegoUzytkownika() {
+    return idZalogowanegoUzytkownika;
+}
+
+void UzytkownikManager::ustawIdZalogowanegoUzytkownika(int noweIdZalogowanegoUzytkownika) {
+    idZalogowanegoUzytkownika = noweIdZalogowanegoUzytkownika;
 }
