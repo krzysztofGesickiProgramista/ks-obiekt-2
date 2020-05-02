@@ -26,6 +26,7 @@ public:
     int pobierzIdZalogowanegoUzytkownika();
 
     void dodajAdresata();
+    void wyswietlWszystkichAdresatow();
 
 };
 

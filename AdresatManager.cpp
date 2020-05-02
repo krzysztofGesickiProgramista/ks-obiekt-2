@@ -54,4 +54,31 @@ string AdresatManager::zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst) 
     return tekst;
 }
 
+void AdresatManager::wyswietlWszystkichAdresatow() {
+    system("cls");
+    if (!adresaci.empty())
+    {
+        cout << "             >>> ADRESACI <<<" << endl;
+        cout << "-----------------------------------------------" << endl;
+        int zakres = adresaci.size();
+        for (int i = 0; i < zakres; i++) {
+            wyswietlDaneAdresata(adresaci[i]);
+        }
+        cout << endl;
+    }
+    else {
+        cout << endl << "Ksiazka adresowa jest pusta." << endl << endl;
+    }
+    system("pause");
+}
+
+void AdresatManager::wyswietlDaneAdresata(Adresat adresat) {
+    cout << endl << "Id:                 " << adresat.pobierzId() << endl;
+    cout << "Imie:               " << adresat.pobierzImie() << endl;
+    cout << "Nazwisko:           " << adresat.pobierzNazwisko() << endl;
+    cout << "Numer telefonu:     " << adresat.pobierzNumerTelefonu() << endl;
+    cout << "Email:              " << adresat.pobierzEmail() << endl;
+    cout << "Adres:              " << adresat.pobierzAdres() << endl;
+}
+
 

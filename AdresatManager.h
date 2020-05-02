@@ -24,6 +24,8 @@ class AdresatManager
 public:
     AdresatManager(string nazwaPlikuZAdresatami) : plikZAdresatami(nazwaPlikuZAdresatami) {};
     void dodajAdresata(int idZalogowanegoUzytkownika);
+    void wyswietlWszystkichAdresatow();
+    void wyswietlDaneAdresata(Adresat adresat);
 
 };
 
