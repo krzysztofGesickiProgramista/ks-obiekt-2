@@ -17,17 +17,17 @@ public:
     KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami) : uzytkownikManager(nazwaPlikuZUzytkownikami), adresatManager(nazwaPlikuZAdresatami) {
         uzytkownikManager.wczytajUzytkownikowZPliku();
     };
-    void rejestracjaUzytkownika();
-    void wypiszWszystkichUzytkownikow();
-    void logowanieUzytkownika();
-    void zmianaHaslaZalogowanegoUzytkownika();
-    void wylogowanieUzytkownika();
 
-    int pobierzIdZalogowanegoUzytkownika();
+    void rejestracjaUzytkownika();                 // REJESTRACJA UZYTKOWNIKA
+    void wypiszWszystkichUzytkownikow();           // WYPISANIE WSZYSTKICH UZYTKOWNIKOW
+    void logowanieUzytkownika();                   // ZALOGOWANIE UZYTKOWNIKA
+    void zmianaHaslaZalogowanegoUzytkownika();     // ZMIANA HASLA ZALOGOWANEGO UZYTKOWNIKA
+    void wylogowanieUzytkownika();                 // WYLOGOWANIE ZALOGOWANEGO UZYTKOWNIKA
 
-    void dodajAdresata();
-    void wyswietlWszystkichAdresatow();
+    void dodajAdresata();                          // DODAWANIE NOWEGO ADRESATA
+    void wyswietlWszystkichAdresatow();            // WYSWIETLANIE WSZYSTKICH ADRESATOW
 
+    int pobierzIdZalogowanegoUzytkownika();        // POMOCNICZA METODA DO SPRAWDZENIA CZY PROGRAM DZIALA
 };
 
 #endif
