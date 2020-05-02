@@ -20,12 +20,11 @@ class AdresatManager
     Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
     int pobierzIdOstatniegoAdresata();
     string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
-
+    void wyswietlDaneAdresata(Adresat adresat);
 public:
     AdresatManager(string nazwaPlikuZAdresatami) : plikZAdresatami(nazwaPlikuZAdresatami) {};
     void dodajAdresata(int idZalogowanegoUzytkownika);
     void wyswietlWszystkichAdresatow();
-    void wyswietlDaneAdresata(Adresat adresat);
     void wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
 };
 
