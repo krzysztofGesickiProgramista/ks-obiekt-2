@@ -28,4 +28,8 @@ void KsiazkaAdresowa::dodajAdresata() {
     adresatManager.dodajAdresata(uzytkownikManager.pobierzIdZalogowanegoUzytkownika());
 }
 
+void KsiazkaAdresowa::wyswietlWszystkichAdresatow() {
+    adresatManager.wyswietlWszystkichAdresatow();
+}
+
 
