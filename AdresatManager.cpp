@@ -1,22 +1,21 @@
 #include "AdresatManager.h"
 
-void AdresatManager::dodajAdresata(int idZalogowanegoUzytkownika) {
+void AdresatManager::dodajAdresata() {
     Adresat adresat;
-    int idOstatniegoAdresata = pobierzIdOstatniegoAdresata();
     system("cls");
     cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
-    adresat = podajDaneNowegoAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
+    adresat = podajDaneNowegoAdresata(plikZAdresatami.pobierzIdOstatniegoAdresata());
 
     adresaci.push_back(adresat);
     plikZAdresatami.dopiszAdresataDoPliku(adresat);
     return;
 }
 
-Adresat AdresatManager::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata) {
+Adresat AdresatManager::podajDaneNowegoAdresata(int idOstatniegoAdresata) {
     Adresat adresat;
 
     adresat.ustawId(++idOstatniegoAdresata);
-    adresat.ustawIdUzytkownika(idZalogowanegoUzytkownika);
+    adresat.ustawIdUzytkownika(ID_ZALOGOWANEGO_UZYTKOWNIKA);
 
     cout << "Podaj imie: ";
     adresat.ustawImie(MetodyPomocnicze::wczytajLinie());
@@ -36,13 +35,6 @@ Adresat AdresatManager::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, i
     adresat.ustawAdres(MetodyPomocnicze::wczytajLinie());
 
     return adresat;
-}
-
-int AdresatManager::pobierzIdOstatniegoAdresata() {
-    if (adresaci.empty() == true)
-        return 0;
-    else
-        return adresaci.back().pobierzId();
 }
 
 string AdresatManager::zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst) {
@@ -79,9 +71,5 @@ void AdresatManager::wyswietlDaneAdresata(Adresat adresat) {
     cout << "Numer telefonu:     " << adresat.pobierzNumerTelefonu() << endl;
     cout << "Email:              " << adresat.pobierzEmail() << endl;
     cout << "Adres:              " << adresat.pobierzAdres() << endl;
-}
-
-void AdresatManager::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika) {
-    adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
 }
 

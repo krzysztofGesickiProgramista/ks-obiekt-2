@@ -54,10 +54,6 @@ void UzytkownikManager::wypiszWszystkichUzytkownikow() {
     }
 }
 
-void UzytkownikManager::wczytajUzytkownikowZPliku() {
-    uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
-}
-
 void UzytkownikManager::logowanieUzytkownika() {
     Uzytkownik uzytkownik;
     string login = "", haslo = "";
@@ -78,6 +74,9 @@ void UzytkownikManager::logowanieUzytkownika() {
                     return;
                 }
             }
+            cout << "Niepoprawne haslo!" << endl;
+            system("pause");
+            return;
         }
     }
     cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
@@ -113,3 +112,12 @@ int UzytkownikManager::pobierzIdZalogowanegoUzytkownika() {
 void UzytkownikManager::wylogowanieUzytkownika() {
     idZalogowanegoUzytkownika = 0;
 }
+
+bool UzytkownikManager::czyUzytkownikJestZalogowany() {
+    if (idZalogowanegoUzytkownika > 0) {
+        return true;
+    }
+    else
+        return false;
+}
+
