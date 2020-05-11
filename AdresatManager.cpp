@@ -2,10 +2,9 @@
 
 void AdresatManager::dodajAdresata() {
     Adresat adresat;
-    int idOstatniegoAdresata = pobierzIdOstatniegoAdresata();
     system("cls");
     cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
-    adresat = podajDaneNowegoAdresata(idOstatniegoAdresata);
+    adresat = podajDaneNowegoAdresata(plikZAdresatami.pobierzIdOstatniegoAdresata());
 
     adresaci.push_back(adresat);
     plikZAdresatami.dopiszAdresataDoPliku(adresat);
@@ -36,13 +35,6 @@ Adresat AdresatManager::podajDaneNowegoAdresata(int idOstatniegoAdresata) {
     adresat.ustawAdres(MetodyPomocnicze::wczytajLinie());
 
     return adresat;
-}
-
-int AdresatManager::pobierzIdOstatniegoAdresata() {
-    if (adresaci.empty() == true)
-        return 0;
-    else
-        return adresaci.back().pobierzId();
 }
 
 string AdresatManager::zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst) {
@@ -80,8 +72,4 @@ void AdresatManager::wyswietlDaneAdresata(Adresat adresat) {
     cout << "Email:              " << adresat.pobierzEmail() << endl;
     cout << "Adres:              " << adresat.pobierzAdres() << endl;
 }
-
-//void AdresatManager::wczytajAdresatowZalogowanegoUzytkownikaZPliku() {
-//    adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
-//}
 

@@ -19,7 +19,6 @@ class AdresatManager
     PlikZAdresatami plikZAdresatami;
 
     Adresat podajDaneNowegoAdresata(int idOstatniegoAdresata);
-    int pobierzIdOstatniegoAdresata();
     string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
     void wyswietlDaneAdresata(Adresat adresat);
 public:
@@ -29,7 +28,6 @@ public:
     };
     void dodajAdresata();
     void wyswietlWszystkichAdresatow();
-    //void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
 };
 
 #endif
